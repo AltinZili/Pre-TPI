@@ -1,0 +1,18 @@
+.centervertically{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#lockimage{
+    width: 50px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignthecontent{
+    align-content:center;
+}

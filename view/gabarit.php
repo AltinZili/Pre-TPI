@@ -7,14 +7,14 @@
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel=stylesheet href="../css/style.css">
 <body>
 <div class="container-fluid">
     <div class="row">
-            <div class="col-8 col-md-2"><img src="../images/english_games_logo.png"></div>
-            <div class="col-2 col-md-3">.col-md-1</div>
-            <div class="col-1 col-md-4">.col-md-1</div>
-            <div class="col-1 col-md-3">.col-md-1</div>
+            <div class="col-4 col-xl-3"><img src="../images/english_games_logo.png"></div>
+            <div class="col-2 col-xl-5"></div>
+            <div class="col-4 col-xl-1 centervertically"><img src="../images/lock.png" id="lockimage"><span>Authentification</span></div>
+            <div class="col-2 col-xl-3 centervertically"><h1>English games</h1></div>
     </div>
 </div>
 
