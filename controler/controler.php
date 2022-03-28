@@ -2,5 +2,5 @@
 
 function homePage()
 {
-    require_once 'view/gabarit.php';
+    require_once 'view/home.php';
 }
