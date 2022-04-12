@@ -50,5 +50,12 @@
 
 #presentation{
     border: 5px solid black;
-    width: fit-content;
+}
+
+.content-fit{
+    display: inline-block;
+}
+
+#biggerfontsize{
+    font-size: 250%;
 }

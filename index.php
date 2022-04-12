@@ -12,6 +12,10 @@ switch($action) {
     case 'home':
         homePage();
         break;
+    case 'enterpseudo':
+        $enterpseudoPost = $_POST['pseudo'];
+        gameChoicePage();
+        break;
 } 
 
 ?>
