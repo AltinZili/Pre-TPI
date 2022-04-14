@@ -14,7 +14,7 @@ switch($action) {
         break;
     case 'enterpseudo':
         $enterpseudoPost = $_POST['pseudo'];
-        gameChoicePage();
+        gameChoicePage($enterpseudoPost);
         break;
 } 
 
