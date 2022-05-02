@@ -7,14 +7,16 @@ function getPDO()
     return $dbh;
 }
 
-function verifyPseudoExist($pseudo)
+function getUserByPseudo($pseudo)
 {
     try {
         $dbh = getPDO();
-        $query = 'INSERT INTO players(pseudonym) VALUES(:pseudonym)';
+        $query = 'SELECT pseudonym FROM administrators.players where players.pseudonym=:pseudo';
         $statment = $dbh->prepare($query);
-        $statment->execute(["pseudonym" => $pseudo]);
+        $statment->execute(['pseudo' => $pseudo]);
+        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);
         $dbh = null;
+        return $queryResult;
     } catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;

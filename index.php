@@ -15,9 +15,14 @@ switch($action) {
         homePage();
         break;
     case 'enterpseudo':
-        
-        $_SESSION['pseudo'] = $_POST['pseudo'];
-        gameChoicePage();
+        $pseudo = $_POST['pseudo'];
+        gameChoicePage($pseudo);
+        break;
+    case 'gamewords':
+        gameWordsPage();
+        break;
+    case 'gameimages':
+        gameimagesPage();
         break;
 } 
 

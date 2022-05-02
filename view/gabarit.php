@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php require_once  'helpers.php' ?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,6 +20,9 @@
     </div>
 </div>
 
+<div class="span12" id="divMain">
+    <?= getFlashMessage() ?>
+</div>
 <?= $content; ?>
 
 

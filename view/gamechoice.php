@@ -9,12 +9,16 @@ $title = "Accueil";
             <div class="col-2 col-xl-2">
             </div>
             <div class="col-3 col-xl-3 test-presentation boxgames centerhorizontalyandverticaly">
-                <h1 class="">JEU 1: Mots</h1>
+                <a href="index.php?action=gamewords">
+                <h1>JEU 1: Mots</h1>
+                </a>
             </div>
             <div class="col-2 col-xl-2">
             </div>
-            <div class="col-3 col-xl-3 test-presentation boxgames centerhorizontalyandverticaly">
-                <h1 class="">JEU 2: Images</h1>
+            <div class="col-3 col-xl-3 test-presentation boxgames centerhorizontalyandverticaly" href="index.php?action=gameimages">
+                <a href="index.php?action=gameimages">
+                <h1>JEU 2: Images</h1>
+                </a>
             </div>
         </div>
     </div>
