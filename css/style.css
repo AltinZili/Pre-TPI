@@ -8,6 +8,14 @@
     justify-content: center;
 }
 
+.centerhorizontalyandverticaly{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 #lockimage{
     width: 50px;
 }
@@ -33,9 +41,6 @@
     flex-direction: column;
 }
 
-
-
-
 #bottomborder{
     padding-bottom: 15px;
     border-bottom: 5px solid black;
@@ -51,6 +56,13 @@
 #presentation{
     border: 5px solid black;
 }
+.test-presentation{
+    border: 5px solid black;
+}
+
+.boxgames{
+    height: 300px;
+}
 
 .content-fit{
     display: inline-block;
@@ -59,3 +71,16 @@
 #biggerfontsize{
     font-size: 250%;
 }
+
+.heighttotal{
+    display: flex;
+    flex-flow: row;
+    height: calc(100% - (180px));
+}
+
+.marginzero{
+    height: 100%;
+    margin: 0;
+}
+
+

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require "controler/controler.php";
 
 if(isset($_GET['action'])){
@@ -13,8 +15,9 @@ switch($action) {
         homePage();
         break;
     case 'enterpseudo':
-        $enterpseudoPost = $_POST['pseudo'];
-        gameChoicePage($enterpseudoPost);
+        
+        $_SESSION['pseudo'] = $_POST['pseudo'];
+        gameChoicePage();
         break;
 } 
 

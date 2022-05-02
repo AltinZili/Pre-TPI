@@ -6,8 +6,14 @@ function homePage()
     require_once 'view/home.php';
 }
 
-function gameChoicePage($pseudo)
+function gameChoicePage()
 {
-    $user = addUserByPseudo($pseudo);
+    $users = verifyPseudoExist($_SESSION['pseudo']);
+
+
+    if(isset($_SESSION['pseudo'])){
+        addUserByPseudo($_SESSION['pseudo']);
+    }
+
     require_once 'view/gamechoice.php';
 }
