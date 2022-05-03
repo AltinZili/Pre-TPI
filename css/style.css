@@ -14,6 +14,27 @@
     align-items: center;
 }
 
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    /* Whatever width you want */
+}
+
 
 
 #lockimage{
@@ -81,6 +102,11 @@
 .marginzero{
     height: 100%;
     margin: 0;
+}
+
+.select{
+    height: 35px;
+    width: 350px;
 }
 
 

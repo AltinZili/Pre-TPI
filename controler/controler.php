@@ -8,7 +8,7 @@ function homePage()
 
 function gameChoicePage($pseudoPost)
 {
-    $user = getUserBypseudo($pseudoPost);
+    $user = getUserByPseudo($pseudoPost);
 
     if($user == null){
         $_SESSION['pseudo'] = $pseudoPost;
@@ -39,14 +39,14 @@ function gameChoicePage($pseudoPost)
         }*/
 }
 
-function gameWordsPage()
+function themeChoiceWordsPage()
 {
-    require_once 'view/gamewords.php';
+    require_once 'view/themechoicewords.php';
 }
 
-function gameImagesPage()
+function themeChoiceImagesPage()
 {
-    require_once 'view/gameimages.php';
+    require_once 'view/themechoiceimages.php';
 }
 
 ?>

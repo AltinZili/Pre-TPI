@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "Jeu des Mots";
+$title = "Accueil";
 ?>
 
 <div class="outer">

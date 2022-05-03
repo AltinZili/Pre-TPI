@@ -18,11 +18,11 @@ switch($action) {
         $pseudo = $_POST['pseudo'];
         gameChoicePage($pseudo);
         break;
-    case 'gamewords':
-        gameWordsPage();
+    case 'themechoicewords':
+        themeChoiceWordsPage();
         break;
     case 'gameimages':
-        gameimagesPage();
+        themeChoiceImagesPage();
         break;
 } 
 
