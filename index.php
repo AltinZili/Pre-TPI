@@ -21,8 +21,14 @@ switch($action) {
     case 'themechoicewords':
         themeChoiceWordsPage();
         break;
-    case 'gameimages':
+    case 'themechoiceimages':
         themeChoiceImagesPage();
+        break;
+    case 'gamewords':
+        gameWordsPage();
+        break;
+    case 'gameimages':
+        gameImagesPage();
         break;
 } 
 

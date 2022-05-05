@@ -109,4 +109,8 @@
     width: 350px;
 }
 
+.myDiv {
+    position: relative;
+    width: auto;
+}
 

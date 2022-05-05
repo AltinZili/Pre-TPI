@@ -49,4 +49,14 @@ function themeChoiceImagesPage()
     require_once 'view/themechoiceimages.php';
 }
 
+function gameWordsPage()
+{
+    require_once 'view/gamewords.php';
+}
+
+function gameImagesPage()
+{
+    require_once 'view/gameimages.php';
+}
+
 ?>
