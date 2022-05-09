@@ -29,8 +29,24 @@ function addUserByPseudo($pseudo)
         $dbh = getPDO();
         $query = 'INSERT INTO players(pseudonym) VALUES(:pseudonym)';
         $statment = $dbh->prepare($query);
-        $statment->execute(["pseudonym" => $pseudo]);
+        $statment->execute(['pseudonym' => $pseudo]);
         $dbh = null;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+function getUserByUsername($username)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM administrators.administrators WHERE administrators.username=:username';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['username' => $username]);
+        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);
+        $dbh = null;
+        return $queryResult;
     } catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;

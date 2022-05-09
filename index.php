@@ -30,6 +30,14 @@ switch($action) {
     case 'gameimages':
         gameImagesPage();
         break;
+    case 'loginadministration':
+        loginPage();
+        break;
+    case 'validatelogin':
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        tryLoginAdministrator($username, $password);
+        break;
 } 
 
 ?>

@@ -39,6 +39,30 @@ function gameChoicePage($pseudoPost)
         }*/
 }
 
+function tryLoginAdministrator($usernamePost, $passwordPost)
+{
+    $user = getUserByUsername($usernamePost);
+
+    if($user != null && password_verify($passwordPost, $user['password'])){
+        unset($user['password']);
+        if(isset($_SESSION['pseudo'])){
+            unset($_SESSION['pseudo']);
+        }
+        $_SESSION['user'] = $user;
+        $_SESSION['flashmessage'] = 'Bonjour '. $_SESSION['user']['username'];
+        require_once  'view/gameadministration.php';
+    } else {
+        $_SESSION['flashmessage'] = "nom d'utilisateur ou mot de passe erroné";
+        require_once 'view/login.php';
+    }
+
+}
+
+function loginPage()
+{
+    require_once 'view/login.php';
+}
+
 function themeChoiceWordsPage()
 {
     require_once 'view/themechoicewords.php';

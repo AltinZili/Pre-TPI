@@ -11,8 +11,6 @@ $title = "Jeu des Mots";
     </div>
 </div>
 
-
-
 <?php
 $content = ob_get_clean();
 require "gabarit.php";

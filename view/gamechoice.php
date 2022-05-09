@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "Accueil";
+$title = "Choix du jeu";
 ?>
 
 <div class="heighttotal">
