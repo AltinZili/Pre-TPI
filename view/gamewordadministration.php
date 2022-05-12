@@ -29,17 +29,12 @@ $title = "Choix du jeu";
         <div class="col-4 col-xl-4" style="padding-top: 15px"><input type="text" id="addword" name="addword" required minlength="2" maxlength="40" size="60"></div>
         <div class="col-2 col-xl-2"></div>
         <div class="col-4 col-xl-4" style="padding-top: 15px">
-            <form method="post" action="index.php?action=adminstrationtheme">
-                <select name="pets" class="select form-select" onchange="this.form.submit();">
+                <select name="themes" class="select">
                     <option value="">--Choisissez une valeur--</option>
-                    <option value="dog">chien</option>
-                    <option value="cat">chat</option>
-                    <option value="hamster">hamster</option>
-                    <option value="parrot">perroquet</option>
-                    <option value="spider">araignée</option>
-                    <option value="fish">poisson</option>
+                    <?php foreach($themes as $theme) {?>
+                        <option><?= $theme['name'] ?></option>
+                    <?php } ?>
                 </select>
-            </form>
         </div>
     </div>
     <form>

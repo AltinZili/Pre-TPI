@@ -50,6 +50,14 @@ function tryLoginAdministrator($usernamePost, $passwordPost)
         }
         $_SESSION['user'] = $user;
         $_SESSION['flashmessage'] = 'Bonjour '. $_SESSION['user']['username'];
+
+        $themes = getThemes();
+        
+        /*foreach($themes as $theme){
+            $themesNames[] = $theme['name'];
+        }
+        var_dump($themesNames);*/
+
         require_once  'view/gamewordadministration.php';
     } else {
         $_SESSION['flashmessage'] = "nom d'utilisateur ou mot de passe erroné";
@@ -96,9 +104,9 @@ function administrationThemesPage()
 function addTheme($themePost)
 {
     $theme = getThemeByName($themePost);
-    var_dump($theme);
     if($themePost != null && $theme == null){
         addChoosenTheme($themePost);
+        $_SESSION['flashmessage'] = "votre thème a été ajouté";
     }else{
         $_SESSION['flashmessage'] = "thème déjà existant";
     }

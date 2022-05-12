@@ -83,4 +83,20 @@ function getThemeByName($theme)
     }
 }
 
+function getThemes()
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM administrators.themes';
+        $statment = $dbh->prepare($query);
+        $statment->execute();
+        $queryResult = $statment->fetchAll(PDO::FETCH_ASSOC);
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
 ?>
