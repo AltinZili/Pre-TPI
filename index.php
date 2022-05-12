@@ -38,6 +38,16 @@ switch($action) {
         $password = $_POST['password'];
         tryLoginAdministrator($username, $password);
         break;
+    case 'administrationimages':
+        administrationImagesPage();
+        break;
+    case 'administrationthemes':
+        administrationThemesPage();
+        break;
+    case 'addtheme':
+        $theme = $_POST['addedtheme'];
+        addTheme($theme);
+        break;
 } 
 
 ?>

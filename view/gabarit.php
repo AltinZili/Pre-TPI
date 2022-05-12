@@ -15,7 +15,7 @@
     <div class="row">
             <div class="col-4 col-xl-3"><img src="../images/english_games_logo.png"></div>
             <div class="col-2 col-xl-5"></div>
-            <div class="col-4 col-xl-1 centerverticaly"><a class="flex-content-column-center" style="color:#000000;" href="index.php?action=loginadministration"><img src="../images/lock.png" id="lockimage"><span>Authentification</span></a></div>
+            <div class="col-4 col-xl-1 centerverticaly"><a class="flex-content-column-center infront" style="color:#000000" href="index.php?action=loginadministration"><img src="../images/lock.png" id="lockimage"><span>Authentification</span></a></div>
             <div class="col-2 col-xl-3 centerverticaly"><h1>English games</h1></div>
     </div>
 </div>

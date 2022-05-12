@@ -50,7 +50,7 @@ function tryLoginAdministrator($usernamePost, $passwordPost)
         }
         $_SESSION['user'] = $user;
         $_SESSION['flashmessage'] = 'Bonjour '. $_SESSION['user']['username'];
-        require_once  'view/gameadministration.php';
+        require_once  'view/gamewordadministration.php';
     } else {
         $_SESSION['flashmessage'] = "nom d'utilisateur ou mot de passe erroné";
         require_once 'view/login.php';
@@ -81,6 +81,29 @@ function gameWordsPage()
 function gameImagesPage()
 {
     require_once 'view/gameimages.php';
+}
+
+function administrationImagesPage()
+{
+    require_once 'view/gameimageadministration.php';
+}
+
+function administrationThemesPage()
+{
+    require_once 'view/themeadministration.php';
+}
+
+function addTheme($themePost)
+{
+    $theme = getThemeByName($themePost);
+    var_dump($theme);
+    if($themePost != null && $theme == null){
+        addChoosenTheme($themePost);
+    }else{
+        $_SESSION['flashmessage'] = "thème déjà existant";
+    }
+
+    administrationThemesPage();
 }
 
 ?>

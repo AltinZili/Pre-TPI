@@ -14,6 +14,7 @@
     align-items: center;
 }
 
+
 .outer {
     display: table;
     position: absolute;
@@ -21,6 +22,7 @@
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 
 .middle {
@@ -122,5 +124,17 @@
 .radiobuttonsize{
     height:25px;
     width:25px;
+}
+
+#custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.infront{
+    position: relative;
+    z-index: 2;
 }
 

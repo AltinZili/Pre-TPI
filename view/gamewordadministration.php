@@ -12,9 +12,9 @@ $title = "Choix du jeu";
         <div class="col-2 col-xl-2"></div>
         <div class="col-2 col-xl-2"><button type="button" class="btn btn-success">Ajouter mot</button></div>
         <div class="col-2 col-xl-1"></div>
-        <div class="col-2 col-xl-2"><button type="button" class="btn btn-success">Ajouter image</button></div>
+        <div class="col-2 col-xl-2"><a href="index.php?action=administrationimages"><button type="button" class="btn btn-success">Ajouter image</button></a></div>
         <div class="col-2 col-xl-1"></div>
-        <div class="col-2 col-xl-2"><button type="button" class="btn btn-success">Ajouter theme</button></div>
+        <div class="col-2 col-xl-2"><a href="index.php?action=administrationthemes"><button type="button" class="btn btn-success">Ajouter theme</button></a></div>
         <div class="col-2 col-xl-2"></div>
     </div>
      <div class="administrationrow row">

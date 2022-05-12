@@ -52,3 +52,35 @@ function getUserByUsername($username)
         return null;
     }
 }
+
+function addChoosenTheme($theme)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'INSERT INTO themes(name) VALUES(:name)';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['name' => $theme]);
+        $dbh = null;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+function getThemeByName($theme)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT name FROM administrators.themes WHERE themes.name=:name';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['name' => $theme]);
+        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+?>
