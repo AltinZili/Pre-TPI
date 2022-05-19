@@ -16,6 +16,7 @@ function gameChoicePage($pseudoPost)
         $_SESSION['flashmessage'] = 'Bonjour '. $_SESSION['pseudo'];
         require_once 'view/gamechoice.php';
     } else {
+        unset($_SESSION['user']);
         $_SESSION['flashmessage'] = "Pseudo déjà pris";
         require_once 'view/home.php';
     }
@@ -43,27 +44,41 @@ function tryLoginAdministrator($usernamePost, $passwordPost)
 {
     $user = getUserByUsername($usernamePost);
 
-    if($user != null && password_verify($passwordPost, $user['password'])){
-        unset($user['password']);
-        if(isset($_SESSION['pseudo'])){
-            unset($_SESSION['pseudo']);
-        }
-        $_SESSION['user'] = $user;
-        $_SESSION['flashmessage'] = 'Bonjour '. $_SESSION['user']['username'];
 
-        $themes = getThemes();
-        
         /*foreach($themes as $theme){
             $themesNames[] = $theme['name'];
         }
         var_dump($themesNames);*/
 
-        require_once  'view/gamewordadministration.php';
-    } else {
-        $_SESSION['flashmessage'] = "nom d'utilisateur ou mot de passe erroné";
-        require_once 'view/login.php';
-    }
+        
+        if ($user != null && password_verify($passwordPost, $user['password'])) {
+            unset($user['password']);
+            if (isset($_SESSION['pseudo'])) {
+                unset($_SESSION['pseudo']);
+            }
+            $_SESSION['user'] = $user;
+            $_SESSION['flashmessage'] = 'Bonjour ' . $_SESSION['user']['username'];
 
+            gameWordAdministrationPage();
+
+            //$themes = getThemes();
+
+            /*foreach($themes as $theme){
+                $themesNames[] = $theme['name'];
+            }
+            var_dump($themesNames);*/
+
+            //require_once 'view/gamewordadministration.php';
+        } else {
+            $_SESSION['flashmessage'] = "nom d'utilisateur ou mot de passe erroné";
+            require_once 'view/login.php';
+        }
+}
+
+function gameWordAdministrationPage(){
+    $validation = 0;
+    $themes = getAdaptedThemes($validation);
+    require_once 'view/gamewordadministration.php';
 }
 
 function loginPage()
@@ -107,11 +122,21 @@ function addTheme($themePost)
     if($themePost != null && $theme == null){
         addChoosenTheme($themePost);
         $_SESSION['flashmessage'] = "votre thème a été ajouté";
-    }else{
+    } else {
         $_SESSION['flashmessage'] = "thème déjà existant";
     }
 
     administrationThemesPage();
+}
+
+function validateGame($themePost, $addwordPost, $ronePost, $rtwoPost, $rthreePost, $rfourPost, $radioPost, $gametypePost)
+{
+        $gametypeid = getGameTypeIdByName($gametypePost);
+        $themeid = getThemeIdByName($themePost);
+        $idGamesThemes = addGamesIncludeThemes($themeid, $gametypeid);
+        updateThemesValidation($themeid);
+
+
 }
 
 ?>
