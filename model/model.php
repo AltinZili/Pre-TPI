@@ -174,6 +174,22 @@ function getByIdsGamesIncludeThemes($gametypeid, $themeid){
     }
 }
 
+function addWord($wordtoadd, $gamethemeid){
+    try {
+        $dbh = getPDO();
+        $query = 'INSERT INTO words(vocabulary, games_include_themes_id) VALUES(:word, :gameincludethemeid)';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['word' => $wordtoadd, 'gameincludethemeid' => $gamethemeid]);
+        $id = $dbh->lastInsertId();;
+        $dbh = null;
+        return $id;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+
 
 
 

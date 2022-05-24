@@ -142,11 +142,11 @@ function validateGame($themePost, $addwordPost, $ronePost, $rtwoPost, $rthreePos
 
     if($gameincludetheme == null)
     {*/
-            $idGamesThemes = addGamesIncludeThemes($themeid, $gametypeid);
-            updateThemesValidation($themeid);
+        $idgamesthemes = addGamesIncludeThemes($themeid, $gametypeid);
+        updateThemesValidation($themeid);
         /*}*/
-
-
+        $idGameWord = addWord($addwordPost, $idgamesthemes);
+        var_dump($idGameWord);
 }
 
 ?>
