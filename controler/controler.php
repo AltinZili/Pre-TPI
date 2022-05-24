@@ -81,6 +81,11 @@ function gameWordAdministrationPage(){
     require_once 'view/gamewordadministration.php';
 }
 
+function logoutAdministration(){
+    unset($_SESSION['user']);
+    homePage();
+}
+
 function loginPage()
 {
     require_once 'view/login.php';
@@ -133,8 +138,13 @@ function validateGame($themePost, $addwordPost, $ronePost, $rtwoPost, $rthreePos
 {
         $gametypeid = getGameTypeIdByName($gametypePost);
         $themeid = getThemeIdByName($themePost);
-        $idGamesThemes = addGamesIncludeThemes($themeid, $gametypeid);
-        updateThemesValidation($themeid);
+    /*$gameincludetheme = getByIdsGamesIncludeThemes($gametypeid, $themeid);
+
+    if($gameincludetheme == null)
+    {*/
+            $idGamesThemes = addGamesIncludeThemes($themeid, $gametypeid);
+            updateThemesValidation($themeid);
+        /*}*/
 
 
 }

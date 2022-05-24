@@ -40,7 +40,7 @@ $title = "Choix du jeu";
     </div>
     <div class="row">
         <div class="col-2 col-xl-2"><h2>réponse 1:</h2></div>
-        <div class="col-4 col-xl-4." style="padding-top: 8px"><input type="text" id="addresponseone" name="addresponseone" required minlength="2" maxlength="40" size="60"></div>
+        <div class="col-4 col-xl-4" style="padding-top: 8px"><input type="text" id="addresponseone" name="addresponseone" required minlength="2" maxlength="40" size="60"></div>
         <div class="col-1 col-xl-1" style="padding-top: 4px">
             <input class="form-check-input radiobuttonsize" type="radio" name="radiobuttons" value="radioresponseone" id="radioresponseone" required>
         </div>

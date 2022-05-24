@@ -34,15 +34,22 @@ switch($action) {
         loginPage();
         break;
     case 'validatelogin':
-        if(!(isset($_SESSION['user']))){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            tryLoginAdministrator($username, $password);
+        if(!isset($_SESSION['user'])){
+            if(isset($_POST['username']) && isset($_POST['password'])){
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                tryLoginAdministrator($username, $password);
+            } else {
+                loginPage();
+            }
+
         }else{
             //gameWordAdministrationPage();
             header("Location: ?action=game");
         }
-
+        break;
+    case 'logoutadministration':
+        logoutAdministration();
         break;
     case 'administrationimages':
         administrationImagesPage();
@@ -51,8 +58,12 @@ switch($action) {
         administrationThemesPage();
         break;
     case 'addtheme':
-        $theme = $_POST['addedtheme'];
-        addTheme($theme);
+        if(isset($_POST['addedtheme'])){
+            $theme = $_POST['addedtheme'];
+            addTheme($theme);
+        } else {
+            administrationThemesPage();
+        }
         break;
     case 'validategame':
         $theme  = $_POST['themes'];
@@ -66,7 +77,11 @@ switch($action) {
         validateGame($theme, $addword, $rone, $rtwo, $rthree, $rfour, $radio, $gametype);
         break;
     case 'game':
-        gameWordAdministrationPage();
+        if(isset($_SESSION['user'])){
+            gameWordAdministrationPage(); 
+        } else {
+            loginPage();
+        }
         break;
     default:
         homePage();

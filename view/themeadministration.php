@@ -10,7 +10,7 @@ $title = "Ajout de thème";
             <br>
             <form method="post" action="index.php?action=addtheme">
                 <h2>Entrer le thème:</h2>
-                <input type="text" name="addedtheme" class="form-control">
+                <input type="text" name="addedtheme" class="form-control" required minlength="2">
                 <input type="submit" value="valider">
             </form>
         </div>

@@ -159,6 +159,21 @@ function updateThemesValidation($themeid){
     }
 }
 
+function getByIdsGamesIncludeThemes($gametypeid, $themeid){
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT id FROM administrators.games_include_themes WHERE games_include_themes.themes_id=:themeid games_include_themes.games_id=:gameid';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['themeid' => $themeid['id'], 'gametypeid' => $gametypeid['id']]);
+        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
 
 
 
