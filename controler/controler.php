@@ -136,6 +136,9 @@ function addTheme($themePost)
 
 function validateGame($themePost, $addwordPost, $ronePost, $rtwoPost, $rthreePost, $rfourPost, $radioPost, $gametypePost)
 {
+        $radionumber = 1;
+        $right = 0;
+        $answers = array($ronePost, $rtwoPost, $rthreePost, $rfourPost);
         $gametypeid = getGameTypeIdByName($gametypePost);
         $themeid = getThemeIdByName($themePost);
     /*$gameincludetheme = getByIdsGamesIncludeThemes($gametypeid, $themeid);
@@ -145,8 +148,23 @@ function validateGame($themePost, $addwordPost, $ronePost, $rtwoPost, $rthreePos
         $idgamesthemes = addGamesIncludeThemes($themeid, $gametypeid);
         updateThemesValidation($themeid);
         /*}*/
-        $idGameWord = addWord($addwordPost, $idgamesthemes);
-        var_dump($idGameWord);
+        $idgameword = addWord($addwordPost, $idgamesthemes);
+
+
+        foreach($answers as $answer){
+
+            if($radioPost == $radionumber){
+                $right = 1;
+            } else {
+                $right = 0;
+            }
+            if($idgameword != null){
+                addWordAnswer($answer, $right, $idgameword);
+            }
+            $radionumber += 1;
+        }
+
+
 }
 
 ?>

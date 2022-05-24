@@ -189,6 +189,19 @@ function addWord($wordtoadd, $gamethemeid){
     }
 }
 
+function addWordAnswer($answer, $right, $idgameword)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'INSERT INTO answers(expression, `right`, words_id) VALUES(:answer, :right, :idgameword)';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['answer' => $answer, 'right' => $right, 'idgameword' => $idgameword]);
+        $dbh = null;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
 
 
 
